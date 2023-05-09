@@ -1,2 +1,7 @@
 # bt_workshop
-repo for bt internal workshop
+
+### To build the package
+``` colcon build ```
+
+### To run the package
+``` ros2 run bt_training startup ```
