@@ -21,8 +21,8 @@ add_executable(
 add_executable(
   run_ex_2
   src/runner_ex_2.cpp
-  src/navigate_to_pose.cpp
-  src/object_scanner.cpp
+  src/charger_scanner.cpp
+  src/dock_to_charger.cpp
   src/reset_to_home.cpp
   src/alarm.cpp)
 
