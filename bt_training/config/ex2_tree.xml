@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="ex1_tree">
+    <Sequence>
+      <SetBlackboard value="2" output_key="pos_2d_x"/>
+      <SetBlackboard value="4" output_key="pos_2d_y"/>
+      <NavigateToPose x="{pos_2d_x}" y="{pos_2d_y}" />
+    </Sequence>
+  </BehaviorTree>
+</root>

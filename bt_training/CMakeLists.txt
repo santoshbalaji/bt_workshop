@@ -11,18 +11,37 @@ find_package(behaviortree_cpp REQUIRED)
 include_directories(include)
 
 add_executable(
-  startup
-  src/runner.cpp
-  src/say_something.cpp
-  src/think_something.cpp)
+  run_ex_1
+  src/runner_ex_1.cpp
+  src/navigate_to_pose.cpp
+  src/object_scanner.cpp
+  src/reset_to_home.cpp
+  src/alarm.cpp)
+
+add_executable(
+  run_ex_2
+  src/runner_ex_2.cpp
+  src/navigate_to_pose.cpp
+  src/object_scanner.cpp
+  src/reset_to_home.cpp
+  src/alarm.cpp)
 
 ament_target_dependencies(
-  startup
+  run_ex_1
+  behaviortree_cpp
+)
+
+ament_target_dependencies(
+  run_ex_2
   behaviortree_cpp
 )
 
 install(TARGETS
-startup
+run_ex_1
+DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS
+run_ex_2
 DESTINATION lib/${PROJECT_NAME})
 
 install(

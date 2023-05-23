@@ -1,5 +1,5 @@
-#ifndef BT_TRAINING__SAY_SOMETHING_HPP_
-#define BT_TRAINING__SAY_SOMETHING_HPP_
+#ifndef BT_TRAINING__NAVIGATE_TO_POSE_HPP_
+#define BT_TRAINING__NAVIGATE_TO_POSE_HPP_
 
 #include "behaviortree_cpp/bt_factory.h"
 #include "behaviortree_cpp/action_node.h"
@@ -14,10 +14,10 @@ using PortsList = BT::PortsList;
 namespace bt_training 
 {
 
-class SaySomething : public SyncActionNode
+class NavigateToPose : public SyncActionNode
 {
   public:
-    SaySomething(const std::string& name, const NodeConfig& config);
+    NavigateToPose(const std::string& name, const NodeConfig& config);
     static PortsList providedPorts();
     NodeStatus tick();
 };
@@ -25,4 +25,4 @@ class SaySomething : public SyncActionNode
 }  // namespace bt_training
 
 
-#endif  // BT_TRAINING__SAY_SOMETHING_HPP_
+#endif  // BT_TRAINING__NAVIGATE_TO_POSE_HPP_
