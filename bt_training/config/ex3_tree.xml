@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="ex3_tree">
+    <Sequence>
+      <Fallback>
+        <RetryUntilSuccessful num_attempts="3">
+          <ChargerScanner x="{x}" y="{y}" />
+        </RetryUntilSuccessful>
+        <Alarm />
+      </Fallback>
+      <Fallback>
+        <DockToCharger x="{x}" y="{y}" distance="{distance}" />
+        <ResetToHome />
+      </Fallback>
+      <PublishToCharger distance="{distance}" />
+    </Sequence>
+  </BehaviorTree>
+</root>

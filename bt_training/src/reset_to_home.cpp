@@ -14,5 +14,5 @@ PortsList ResetToHome::providedPorts()
 NodeStatus ResetToHome::tick() 
 {
   std::cout << "Reset to home: Success" << std::endl;
-  return NodeStatus::SUCCESS;
+  return NodeStatus::FAILURE;
 }

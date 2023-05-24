@@ -11,7 +11,8 @@ PortsList DockToCharger::providedPorts()
   return 
   { 
     BT::InputPort<std::string>("x"),
-    BT::InputPort<std::string>("y")
+    BT::InputPort<std::string>("y"),
+    BT::OutputPort<std::string>("distance"),
   };
 }
 
@@ -36,6 +37,8 @@ NodeStatus DockToCharger::tick()
 
   std::cout << "Dock x on robot: " << x.value() << std::endl;
   std::cout << "Dock y on robot: " << y.value() << std::endl;
+
+  setOutput("distance", "10");
 
   unsigned int seed = time(NULL);
   int choice = rand_r(&seed) % 2;
