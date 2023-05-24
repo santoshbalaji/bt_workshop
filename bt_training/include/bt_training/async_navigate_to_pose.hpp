@@ -1,13 +1,12 @@
-#ifndef BT_TRAINING__PUBLISH_TO_CHARGER_HPP_
-#define BT_TRAINING__PUBLISH_TO_CHARGER_HPP_
+#ifndef BT_TRAINING__ASYNC_NAVIGATE_TO_POSE_HPP_
+#define BT_TRAINING__ASYNC_NAVIGATE_TO_POSE_HPP_
+
+#include <chrono>
 
 #include "behaviortree_cpp/bt_factory.h"
 #include "behaviortree_cpp/action_node.h"
 #include "behaviortree_cpp/tree_node.h"
 #include "behaviortree_cpp/basic_types.h"
-
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
 
 using StatefulActionNode = BT::StatefulActionNode;
 using NodeConfig = BT::NodeConfig;
@@ -17,21 +16,20 @@ using PortsList = BT::PortsList;
 namespace bt_training
 {
 
-class PublishToCharger : public StatefulActionNode
+class AsyncNavigateToPose : public StatefulActionNode
 {
   public:
-    PublishToCharger(const std::string& name, const NodeConfig& config);
+    AsyncNavigateToPose(const std::string& name, const NodeConfig& config);
     static PortsList providedPorts();
     BT::NodeStatus onStart() override;
     BT::NodeStatus onRunning() override;
     void onHalted() override;
-
+  
   private:
-    rclcpp::Node::SharedPtr ros_node_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
+    std::chrono::system_clock::time_point _completion_time;
 };
 
 }  // namespace bt_training
 
 
-#endif  // BT_TRAINING__PUBLISH_TO_CHARGER_HPP_
+#endif  // BT_TRAINING__ASYNC_NAVIGATE_TO_POSE_HPP_

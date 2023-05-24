@@ -43,6 +43,22 @@ add_executable(
   src/charger_request_subscriber.cpp
   src/charger_dock.cpp)
 
+add_executable(
+  run_ex_51
+  src/runner_ex_51.cpp
+  src/async_navigate_to_pose.cpp
+  src/object_scanner.cpp
+  src/reset_to_home.cpp
+  src/alarm.cpp)
+
+add_executable(
+  run_ex_52
+  src/runner_ex_52.cpp
+  src/async_navigate_to_pose.cpp
+  src/object_scanner.cpp
+  src/reset_to_home.cpp
+  src/alarm.cpp)
+
 ament_target_dependencies(
   run_ex_1
   behaviortree_cpp
@@ -67,6 +83,16 @@ ament_target_dependencies(
   std_msgs
 )
 
+ament_target_dependencies(
+  run_ex_51
+  behaviortree_cpp
+)
+
+ament_target_dependencies(
+  run_ex_52
+  behaviortree_cpp
+)
+
 install(TARGETS
 run_ex_1
 DESTINATION lib/${PROJECT_NAME})
@@ -81,6 +107,14 @@ DESTINATION lib/${PROJECT_NAME})
 
 install(TARGETS
 run_ex_4
+DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS
+run_ex_51
+DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS
+run_ex_52
 DESTINATION lib/${PROJECT_NAME})
 
 install(

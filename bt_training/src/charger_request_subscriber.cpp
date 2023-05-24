@@ -1,8 +1,5 @@
 #include "bt_training/charger_request_subscriber.hpp"
 
-#include <thread>
-#include <chrono>
-
 using std::placeholders::_1;
 using ChargerRequestSubscriber = bt_training::ChargerRequestSubscriber;
 
