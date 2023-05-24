@@ -20,7 +20,7 @@ void ChargerRequestSubscriber::topic_callback(const std_msgs::msg::String::Share
 {
   distance_ = msg->data;
   trigger_ = true;
-  std::cout << "in" << std::endl; 
+  std::cout << "Received new distance from robot side" << std::endl; 
 }
 
 PortsList ChargerRequestSubscriber::providedPorts()
@@ -39,11 +39,13 @@ NodeStatus ChargerRequestSubscriber::tick()
 
   if(trigger_)
   {
+    std::cout << "Charger request subscriber : Success" << std::endl;
     setOutput("distance", distance_);
     return NodeStatus::SUCCESS;
   }
   else
   {
+    std::cout << "Charger request subscriber : Failure" << std::endl;
     setOutput("distance", "-1");
     return NodeStatus::FAILURE;
   }

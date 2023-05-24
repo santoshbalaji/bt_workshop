@@ -13,6 +13,6 @@ PortsList Alarm::providedPorts()
 
 NodeStatus Alarm::tick() 
 {
-  std::cout << "Signal red: Success" << std::endl;
+  std::cout << "Signal red: Failure" << std::endl;
   return NodeStatus::FAILURE;
 }

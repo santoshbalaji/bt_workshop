@@ -22,7 +22,8 @@ NodeStatus ChargerScanner::tick()
 
   unsigned int seed = time(NULL);
   int choice = rand_r(&seed) % 2;
-  std::cout << "Charger scanner : " << choice << std::endl;
+  std::string state = choice ==  0 ? "Success" : "Failure";
+  std::cout << "Charger scanner : " << state << std::endl;
 
   return choice ==  0 ? NodeStatus::SUCCESS : NodeStatus::FAILURE;
 }

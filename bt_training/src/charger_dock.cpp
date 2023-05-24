@@ -29,7 +29,8 @@ NodeStatus ChargerDock::tick()
 
   unsigned int seed = time(NULL);
   int choice = rand_r(&seed) % 2;
-  std::cout << "Dock to charger : " << choice << std::endl;
+  std::string state = choice ==  0 ? "Success" : "Failure";
+  std::cout << "Dock to charger : " << state << std::endl;
 
   return choice ==  0 ? NodeStatus::SUCCESS : NodeStatus::FAILURE;
 }
